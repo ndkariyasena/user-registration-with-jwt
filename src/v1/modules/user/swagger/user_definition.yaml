@@ -1,0 +1,24 @@
+definitions: # Schema definition for request body
+  user:
+    type: object
+    properties:
+      _id:
+        type: string
+      id:
+        type: string
+      email:
+        type: string
+      userName:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      password:
+        type: string
+      createdAt:
+        type: date
+        example: "2019-01-01"
+      updatedAt:
+        type: date
+        example: "2019-01-01"

@@ -1,0 +1,46 @@
+paths:
+  /register:
+    post:
+      tags:
+        - Root
+      summary: "Create new user"
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: will be creating a user
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              userName:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+              password:
+                type: string
+            example:
+              email: testemail@gmail.com,
+              userName: helloUser,
+              firstName: Sam,
+              lastName: Depp,
+              password: myPassword&5
+      responses:
+        200:
+          allOf:
+            - $ref: "#components/responses/200"
+            - schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    $ref: "#/definitions/user"
+        401:
+          $ref: "#components/responses/401"
+        500:
+          $ref: "#components/responses/500"

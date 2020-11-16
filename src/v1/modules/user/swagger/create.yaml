@@ -1,0 +1,22 @@
+paths:
+  /user/profile:
+    get:
+      tags:
+        - User
+      summary: "Get users' details"
+      produces:
+        - application/json
+      responses:
+        200:
+          allOf:
+            - $ref: "#components/responses/200"
+            - schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    $ref: "#/definitions/user"
+        401:
+          $ref: "#components/responses/401"
+        500:
+          $ref: "#components/responses/500"

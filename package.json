@@ -1,0 +1,44 @@
+{
+  "name": "nodejs-user-registration",
+  "version": "1.0.0",
+  "description": "Nodejs user registration with JWT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --detectOpenHandles --forceExit"
+  },
+  "author": "N D K Ariyasena <ndkariyasenagmail.com>",
+  "license": "ISC",
+  "_moduleAliases": {
+    "~root": ".",
+    "@config": "config",
+    "@src": "src",
+    "@v1": "src/v1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "~root": ".",
+      "@config": "config",
+      "@src/(.*)": "src/$1"
+    }
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.10.14",
+    "swagger-jsdoc": "^5.0.1",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.13.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
+  }
+}

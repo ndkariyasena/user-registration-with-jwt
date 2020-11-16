@@ -1,0 +1,22 @@
+paths:
+  /logout:
+    post:
+      tags:
+        - Root
+      summary: "Logout user from the system"
+      produces:
+        - application/json
+      responses:
+        200:
+          allOf:
+            - $ref: "#components/responses/200"
+            - schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    $ref: "#/definitions/user"
+        401:
+          $ref: "#components/responses/401"
+        500:
+          $ref: "#components/responses/500"

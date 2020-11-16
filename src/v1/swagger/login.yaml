@@ -1,0 +1,40 @@
+paths:
+  /login:
+    post:
+      tags:
+        - Root
+      summary: "Login user to the system"
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: will be creating a token
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              userName:
+                type: string
+              password:
+                type: string
+            example:
+              email: testemail@gmail.com,
+              userName: helloUser,
+              password: myPassword&5
+      responses:
+        200:
+          allOf:
+            - $ref: "#components/responses/200"
+            - schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    $ref: "#/definitions/user"
+        401:
+          $ref: "#components/responses/401"
+        500:
+          $ref: "#components/responses/500"
